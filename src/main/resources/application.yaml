@@ -8,9 +8,9 @@ spring:
     username: dev_member
     password: dev123456
 
-#  elasticsearch:
-#    rest:
-#      uris: http://192.168.212.xxx:9300
-#      username:
-#      password:
+  elasticsearch:
+    rest:
+      uris: http://192.168.10.90:9200
+      username:
+      password:
 

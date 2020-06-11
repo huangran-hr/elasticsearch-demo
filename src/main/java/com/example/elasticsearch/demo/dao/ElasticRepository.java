@@ -8,14 +8,12 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchRepository
 
 public interface ElasticRepository extends ElasticsearchRepository<DocBean, Long> {
 
-    //默认的注释
-    //@Query("{\"bool\" : {\"must\" : {\"field\" : {\"content\" : \"?\"}}}}")
     Page<DocBean> findByContent(String content, Pageable pageable);
 
-    @Query("{\"bool\" : {\"must\" : {\"field\" : {\"firstCode.keyword\" : \"?\"}}}}")
+    @Query("{\"match\": {\"firstCode\": {\"query\": \"?0\"}}}")
     Page<DocBean> findByFirstCode(String firstCode, Pageable pageable);
 
-    @Query("{\"bool\" : {\"must\" : {\"field\" : {\"secordCode.keyword\" : \"?\"}}}}")
+    @Query("{\"match\": {\"secordCode\": {\"query\": \"?0\"}}}")
     Page<DocBean> findBySecordCode(String secordCode, Pageable pageable);
 
 

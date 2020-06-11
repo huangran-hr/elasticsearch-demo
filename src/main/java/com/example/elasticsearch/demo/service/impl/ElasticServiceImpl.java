@@ -25,8 +25,7 @@ public class ElasticServiceImpl implements IElasticService {
 
     @Override
     public void createIndex() {
-        //elasticsearchTemplate.createIndex(DocBean.class);
-        elasticsearchTemplate.indexOps(DocBean.class);
+        elasticsearchTemplate.createIndex(DocBean.class);
     }
 
     @Override
